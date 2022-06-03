@@ -1,38 +1,138 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(120deg, rgb(76, 181, 241), rgb(140, 228, 255));
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form{
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+form input, form button{
+  padding: 10px;
+  border: 1px solid gray;
+  outline: none;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-control{
+  display: flex;
 }
+
+form input{
+  width: 100%;
+}
+
+@media (max-width: 770px) {
+  form input {
+    width: 100%;
+  }
+
+  .select{
+    margin-top: 10px;
+  }
+
+  select{
+    width: 100%;
+  }
+
+  form{
+    flex-direction: column;
+  }
+
+  .todo{
+    width: 65%;
+  }
+
+}
+
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 184px;
+}
+
+.select{
+  position: relative;
+}
+
+.select::before{
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  background: #ff0000;
+  color: #ffffff;
+  pointer-events: none;
+  line-height: 35px;
+}
+
+
+form select{
+  margin-left: 5px;
+  padding: 10px;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.todo{
+  display: flex;
+}
+
+.todo-item{
+  list-style-type: none;
+  background: #ffffff;
+  padding: 10px;
+  width: 350px;
+}
+
+.completed{
+  text-decoration: line-through;
+  color: #cccccc;
+}
+
+.todo .complete-btn{
+  background: #003cff;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
+.todo .trash-btn{
+  background: #ff0000;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+
